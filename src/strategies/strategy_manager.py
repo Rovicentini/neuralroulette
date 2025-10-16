@@ -40,8 +40,11 @@ class StrategyManager:
         # Avalia a predição anterior (antes de adicionar o novo número)
         if self.last_prediction:
             predicted_zone = set()
-            for num in self.last_prediction:
-                predicted_zone.update(self.strategy.get_neighbors(num, n=3))
+            try:
+                for num in self.last_prediction:
+                    predicted_zone.update(self.strategy.get_neighbors(num, n=3))
+            except AttributeError:
+                predicted_zone.update(self.last_prediction)
 
             bets = self.strategy.calculate_bets(self.last_prediction)
             total_bet = sum(bets.values())
