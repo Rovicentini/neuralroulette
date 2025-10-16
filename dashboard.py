@@ -7,6 +7,11 @@ port = int(os.environ.get("PORT", 8501))
 st.set_page_config(page_title="NeuralRoulette Dashboard", layout="wide")
 st.title("🎯 NeuralRoulette Dashboard")
 
+strategy_option = "Top3"
+st.markdown("🎯 Estratégia ativa: **Top3**")
+
+
+
 try:
     with open("game_history.json", "r") as f:
         history = json.load(f)
