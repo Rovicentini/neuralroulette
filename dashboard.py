@@ -18,6 +18,13 @@ try:
 except:
     history = {"results": [], "wins": 0, "balance": 10.0, "roi": 0.0, "last_predictions": []}
 
+history["strategy"] = "Top3"
+
+# 👇 Salva de volta no arquivo
+with open("game_history.json", "w") as f:
+    json.dump(history, f)
+
+
 st.metric("Total Spins", len(history["results"]))
 st.metric("Acertos", history["wins"])
 st.metric("Win Rate", f'{history["wins"] / len(history["results"]):.2%}' if history["results"] else "0.00%")
