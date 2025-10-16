@@ -1,5 +1,8 @@
 import streamlit as st
 import json
+import os
+
+port = int(os.environ.get("PORT", 8501))
 
 st.set_page_config(page_title="NeuralRoulette Dashboard", layout="wide")
 st.title("🎯 NeuralRoulette Dashboard")
