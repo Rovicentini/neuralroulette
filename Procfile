@@ -1,2 +1,2 @@
 web: streamlit run dashboard.py
-worker: python main.py
+worker: bash start.sh
