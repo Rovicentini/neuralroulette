@@ -21,3 +21,6 @@ st.metric("ROI", f'{history["roi"]:.2%}')
 
 st.write("🔮 Últimas predições:")
 st.write(history["last_predictions"][-5:])
+
+if __name__ == "__main__":
+    st._main_run_clExplicit("dashboard.py", "streamlit")
