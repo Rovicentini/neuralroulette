@@ -4,3 +4,4 @@ websocket-client
 streamlit
 scikit-learn
 pandas
+websockets>=10.0
